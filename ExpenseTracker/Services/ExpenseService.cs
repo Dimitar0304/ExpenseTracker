@@ -11,13 +11,8 @@ namespace ExpenseTracker.Services
         private string filePath = "wwwroot/data/Expenses.json";
         public FinanceOperationModel AddAsync(ExpenseDto entity)
         {
-            StringBuilder expense = new StringBuilder();
-            expense.AppendLine(entity.Id.ToString());
-            expense.Append(entity.Date.ToString());
-            expense.Append(entity.Amount.ToString());
-            expense.Append(entity.Type);
-            expense.Append(entity.Summary);
-            string json = JsonSerializer.Serialize(expense, new JsonSerializerOptions() { WriteIndented = true });
+            entity.Date = DateTime.Now;
+            string json = JsonSerializer.Serialize(entity, new JsonSerializerOptions() { WriteIndented = true });
             File.WriteAllText(filePath, json);
 
             return new FinanceOperationModel()

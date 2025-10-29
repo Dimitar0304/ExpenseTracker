@@ -1,8 +1,78 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
+    decimal currentFinance = 1250.75M; // Example value — you can replace it with Model property
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand, .nav-link, .finance-text {
+            color: white !important;
+        }
+
+        .finance {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hello-text {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 4rem;
+            font-weight: 700;
+            color: #212529;
+        }
+    </style>
+</head>
+<body>
+    <!-- 🔹 Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MyFinanceApp</a>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/ForUs">For Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Expenses/Add">Add Expense</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Income/Add">Add Income</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Finance info -->
+            <div class="finance">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 10a2 2 0 1 0-6 0a2 2 0 0 0 6 0z" />
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+                <span class="finance-text fw-bold">$@currentFinance</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🔹 Main content -->
+    <div class="hello-text">
+        Hello, Customer 👋
+    </div>
+</body>
+</html>

@@ -23,7 +23,7 @@ namespace ExpenseTracker.Controllers
             if (!ModelState.IsValid)
             {
                 model = new ExpenseDto();
-                 View(model);
+                return View(model);
             }
             service.AddAsync(model);
             return  RedirectToAction("Index","Home");
