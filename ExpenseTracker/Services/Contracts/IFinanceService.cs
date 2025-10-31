@@ -8,6 +8,7 @@ namespace ExpenseTracker.Services.Contracts
         FinanceOperationModel AddAsync(ExpenseDto entity);
         FinanceOperationModel DeleteAsync(ExpenseDto entity);
         IFinanceEntity ReadAsync(int id);
+        List<ExpenseDto> ReadAll();
         FinanceOperationModel UpdateAsync(int id);
     }
 }

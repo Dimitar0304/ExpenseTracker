@@ -16,12 +16,21 @@ namespace ExpenseTracker.Services
             throw new NotImplementedException();
         }
 
-        public IFinanceEntity ReadAsync(int id)
+        public IFinanceEntity ReadAll()
+        {
+            throw new NotImplementedException();
+        }
+        public FinanceOperationModel UpdateAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public FinanceOperationModel UpdateAsync(int id)
+        List<ExpenseDto> IFinanceService.ReadAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        IFinanceEntity IFinanceService.ReadAsync(int id)
         {
             throw new NotImplementedException();
         }

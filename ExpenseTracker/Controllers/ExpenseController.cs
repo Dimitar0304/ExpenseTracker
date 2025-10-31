@@ -28,5 +28,11 @@ namespace ExpenseTracker.Controllers
             service.AddAsync(model);
             return  RedirectToAction("Index","Home");
         }
+        [HttpGet]
+        public IActionResult All()
+        {
+            var models = service.ReadAll();
+            return View(models);
+        }
     }
 }
